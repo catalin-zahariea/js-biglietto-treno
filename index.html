@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biglietto Treno</title>
+
+    <!-- Link Style CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Link Google Font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Main -->
+    <main>
+      <section class="banner">
+        <div class="banner-title">
+            <h1>Calcolatore prezzo</h1>
+        </div>
+      </section>
+
+      <section class="price-discount">
+        <div class="container">
+          <h2>Offerta</h2>
+          <div class="offer-payoff">Sconto studenti e pensionati</div>
+
+          <form>
+            <div class="age-option">
+              <input type="radio" id="under18" name="userAge" value="under18" />
+              <label for="under18">Età minore di 18 anni</label>
+            </div>
+
+            <div class="age-option">
+              <input type="radio" id="over65" name="userAge" value="over65" />
+              <label for="over65">Età maggiore di 65 anni</label>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="price-calculator">
+        <div class="container">
+          <form>
+            <div class="distance-option">
+              <input
+                type="text"
+                id="distance"
+                name="distance"
+                placeholder="Inserisca la distanza in km che vorrebbe percorrere" 
+              />
+              <label for="distance"
+                >Inserisca la distanza in km che vorrebbe percorrere</label
+              >
+              <div class="calculate-total">
+                <input type="button" onclick="calcoloPrezzoTotale()" value="Calcola" id="btnCalcola"></input>
+                <div>
+                  <div>Totale da pagare</div>
+                  <h3 id="totaleDaPagare">€0,00</h3>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+    <!-- End Main -->
+    <!-- Link Javascript -->
+    <script type="text/javascript" src="js/script.js"></script>
+  </body>
+</html>

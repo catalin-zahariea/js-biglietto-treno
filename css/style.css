@@ -17,7 +17,32 @@ body {
 .container {
   max-width: 1170px;
   margin: auto;
-  padding: 30px;
+  padding: 15px;
+}
+
+ul {
+  list-style: none;
+  margin: 0 -10px;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #b42b30;
+  transition: all 0.25s;
+}
+
+li:hover a {
+  background-color: #b42b30;
+  color: #fff;
+  border-radius: 5px;
+  padding: 5px 10px;
 }
 
 /* ---------------------------------- */
@@ -26,8 +51,8 @@ body {
 h1 {
   color: #b42b30;
   text-transform: uppercase;
-  font-weight: 900;
-  font-size: 30px;
+  font-weight: 00;
+  font-size: 16px;
 }
 
 h2 {
@@ -44,19 +69,22 @@ h2 {
 }
 
 /* ---------------------------------- */
+/* HEADER */
+
+.menu-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------------------------------- */
 /* BANNER */
 
 .banner {
   background-image: url(../img/1023x300_RiparTIAMOItalia.jpg);
   height: 400px;
-  background-position-y: 50px;
   background-size: cover;
-}
-
-.banner-title {
-  padding: 10px 30px;
-  background-color: #fff;
-  border-bottom: 1px solid #b42b30;
+  background-repeat: no-repeat;
 }
 
 /* ---------------------------------- */
@@ -136,7 +164,7 @@ h2 {
   left: -1px;
 }
 
-.btn-calcola {
+#btnCalculate {
   margin-right: 10px;
   padding: 10px;
   border: 1px solid #b42b30;
@@ -154,4 +182,14 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+/* ---------------------------------- */
+/* FOOTER */
+
+.footer-payoff {
+  padding-top: 100px;
+  font-size: 12px;
+  font-weight: 300;
+  text-align: center;
 }

@@ -6,19 +6,20 @@ function calcoloPrezzoTotale() {
   console.log(userDistance);
   priceMultiplier = 0.21;
   prezzoDistanza = userDistance * priceMultiplier;
-  prezzoDistanza.toFixed(2);
 
   scontoStudenti = prezzoDistanza * 0.2;
   scontoPensionati = prezzoDistanza * 0.4;
 
+  prezzoDistanza.toFixed(2);
+
   if (under18 == true) {
-    document.getElementById("totaleDaPagare").innerHTML =
-      "€" + [prezzoDistanza - scontoStudenti];
+    document.getElementById("totalToPay").innerHTML =
+      "€" + [prezzoDistanza - scontoStudenti.toFixed(2)];
   } else if (over65 == true) {
-    document.getElementById("totaleDaPagare").innerHTML =
-      "€" + [prezzoDistanza - scontoPensionati];
+    document.getElementById("totalToPay").innerHTML =
+      "€" + [prezzoDistanza - scontoPensionati.toFixed(2)];
   } else {
-    document.getElementById("totaleDaPagare").innerHTML = "€" + prezzoDistanza;
+    document.getElementById("totalToPay").innerHTML = "€" + prezzoDistanza;
   }
   return;
 }

@@ -17,12 +17,26 @@
     />
   </head>
   <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+          <nav class="menu-top">
+            <h1>Calcolatore prezzo</h1>
+
+            <ul class="menu-top-links">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Prices</a></li>
+              <li><a href="#">Contacts</a></li>
+            </ul>
+          </nav>
+        </div>
+    </header>
+    <!-- End Header -->
+
     <!-- Main -->
     <main>
       <section class="banner">
-        <div class="banner-title">
-            <h1>Calcolatore prezzo</h1>
-        </div>
       </section>
 
       <section class="price-discount">
@@ -48,20 +62,15 @@
         <div class="container">
           <form>
             <div class="distance-option">
-              <input
-                type="text"
-                id="distance"
-                name="distance"
-                placeholder="Inserisca la distanza in km che vorrebbe percorrere" 
-              />
+              <input type="text" id="distance" name="distance" placeholder="Inserisca la distanza in km che vorrebbe percorrere" />
               <label for="distance"
                 >Inserisca la distanza in km che vorrebbe percorrere</label
               >
               <div class="calculate-total">
-                <input type="button" onclick="calcoloPrezzoTotale()" value="Calcola" id="btnCalcola"></input>
+                <input type="button" onclick="calcoloPrezzoTotale()" value="Calcola" id="btnCalculate"></input>
                 <div>
                   <div>Totale da pagare</div>
-                  <h3 id="totaleDaPagare">€0,00</h3>
+                  <h3 id="totalToPay">€0,00</h3>
                 </div>
               </div>
             </div>
@@ -70,6 +79,16 @@
       </section>
     </main>
     <!-- End Main -->
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-payoff">
+          Made with <span style="color: red;">&hearts;</span> by a Boolean student.
+        </div>
+      </div>
+    </footer>
+    <!-- End Footer -->
     <!-- Link Javascript -->
     <script type="text/javascript" src="js/script.js"></script>
   </body>

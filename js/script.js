@@ -7,19 +7,43 @@ function calcoloPrezzoTotale() {
   priceMultiplier = 0.21;
   prezzoDistanza = userDistance * priceMultiplier;
 
+  // Sconti
   scontoStudenti = prezzoDistanza * 0.2;
   scontoPensionati = prezzoDistanza * 0.4;
 
-  prezzoDistanza.toFixed(2);
+  // Controllo prezzoDistanza
+  console.log(prezzoDistanza);
+
+  // Prezzi scontati
+  prezzoTotaleStudenti = prezzoDistanza - scontoStudenti;
+  prezzoTotalePensionati = prezzoDistanza - scontoPensionati;
+
+  // Controllo prezzi
+  console.log("Controllo prezzi in numeri");
+  console.log(prezzoDistanza);
+  console.log(prezzoTotaleStudenti);
+  console.log(prezzoTotalePensionati);
+
+  // .toFixed
+  prezzoDistanza = prezzoDistanza.toFixed(2);
+  prezzoTotaleStudenti = prezzoTotaleStudenti.toFixed(2);
+  prezzoTotalePensionati = prezzoTotalePensionati.toFixed(2);
 
   if (under18 == true) {
     document.getElementById("totalToPay").innerHTML =
-      "€" + [prezzoDistanza - scontoStudenti.toFixed(2)];
+      "€" + prezzoTotaleStudenti;
   } else if (over65 == true) {
     document.getElementById("totalToPay").innerHTML =
-      "€" + [prezzoDistanza - scontoPensionati.toFixed(2)];
+      "€" + prezzoTotalePensionati;
   } else {
     document.getElementById("totalToPay").innerHTML = "€" + prezzoDistanza;
   }
+
+  // Controllo prezzi
+  console.log("Controllo prezzi in forma umana");
+  console.log(prezzoDistanza);
+  console.log(prezzoTotaleStudenti);
+  console.log(prezzoTotalePensionati);
+
   return;
 }

@@ -1,49 +1,44 @@
-function calcoloPrezzoTotale() {
-  var under18 = document.getElementById("under18").checked;
-  var over65 = document.getElementById("over65").checked;
+// ----------------------------------
+// Variables
 
-  userDistance = parseInt(document.getElementById("distance").value);
-  console.log(userDistance);
-  priceMultiplier = 0.21;
-  prezzoDistanza = userDistance * priceMultiplier;
+var priceCalculatorButton = document.getElementById('btnCalculate');
 
-  // Sconti
-  scontoStudenti = prezzoDistanza * 0.2;
-  scontoPensionati = prezzoDistanza * 0.4;
+// ----------------------------------
+// Function
 
-  // Controllo prezzoDistanza
-  console.log(prezzoDistanza);
+priceCalculatorButton.addEventListener ('click', function () {
 
-  // Prezzi scontati
-  prezzoTotaleStudenti = prezzoDistanza - scontoStudenti;
-  prezzoTotalePensionati = prezzoDistanza - scontoPensionati;
+  // ----------------------------------
+  // Variables
 
-  // Controllo prezzi
-  console.log("Controllo prezzi in numeri");
-  console.log(prezzoDistanza);
-  console.log(prezzoTotaleStudenti);
-  console.log(prezzoTotalePensionati);
+  var under18Input = document.getElementById("under18").checked;
+  var over65Input = document.getElementById("over65").checked;
+  var userDistance = parseInt(document.getElementById("distance").value);
+  var finalPriceOutput = document.getElementById('totalToPay');
+  var finalPrice;
+  
+  //___________________________
+  // Price multipliers
+  var priceMultiplier = 0.21;
+  var discountMinor = 0.2;
+  var discountOver = 0.4;
 
-  // .toFixed
-  prezzoDistanza = prezzoDistanza.toFixed(2);
-  prezzoTotaleStudenti = prezzoTotaleStudenti.toFixed(2);
-  prezzoTotalePensionati = prezzoTotalePensionati.toFixed(2);
+  //___________________________
+  // Calculate price by distance
+  finalPrice = userDistance * priceMultiplier;
 
-  if (under18 == true) {
-    document.getElementById("totalToPay").innerHTML =
-      "€" + prezzoTotaleStudenti;
-  } else if (over65 == true) {
-    document.getElementById("totalToPay").innerHTML =
-      "€" + prezzoTotalePensionati;
+  //___________________________
+  // Calculate price and print using discount multiplier where needed
+  if (under18Input == true) {
+    finalPrice -= finalPrice * discountMinor;
+    finalPriceOutput.innerHTML = '€' + finalPrice;
+  } else if (over65Input == true) {
+    finalPrice -= finalPrice * discountOver;
+    finalPriceOutput.innerHTML = '€' + finalPrice;
   } else {
-    document.getElementById("totalToPay").innerHTML = "€" + prezzoDistanza;
+    finalPriceOutput.innerHTML = '€' + finalPrice;
   }
 
-  // Controllo prezzi
-  console.log("Controllo prezzi in forma umana");
-  console.log(prezzoDistanza);
-  console.log(prezzoTotaleStudenti);
-  console.log(prezzoTotalePensionati);
-
   return;
-}
+});
+
